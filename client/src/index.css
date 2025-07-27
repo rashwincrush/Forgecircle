@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom ForgeAlumni colors */
+  --navy-50: hsl(214, 100%, 97%);
+  --navy-100: hsl(214, 95%, 93%);
+  --navy-200: hsl(213, 97%, 87%);
+  --navy-300: hsl(212, 96%, 78%);
+  --navy-400: hsl(213, 94%, 68%);
+  --navy-500: hsl(217, 91%, 60%);
+  --navy-600: hsl(221, 83%, 53%);
+  --navy-700: hsl(224, 76%, 48%);
+  --navy-800: hsl(226, 71%, 40%);
+  --navy-900: hsl(224, 64%, 33%);
+  
+  --gold-50: hsl(48, 100%, 96%);
+  --gold-100: hsl(48, 96%, 89%);
+  --gold-200: hsl(48, 97%, 77%);
+  --gold-300: hsl(46, 97%, 65%);
+  --gold-400: hsl(43, 96%, 56%);
+  --gold-500: hsl(38, 92%, 50%);
+  --gold-600: hsl(32, 95%, 44%);
+  --gold-700: hsl(26, 90%, 37%);
+  --gold-800: hsl(23, 83%, 31%);
+  --gold-900: hsl(22, 78%, 26%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .navy-50 { color: hsl(214, 100%, 97%); }
+  .navy-100 { color: hsl(214, 95%, 93%); }
+  .navy-200 { color: hsl(213, 97%, 87%); }
+  .navy-300 { color: hsl(212, 96%, 78%); }
+  .navy-400 { color: hsl(213, 94%, 68%); }
+  .navy-500 { color: hsl(217, 91%, 60%); }
+  .navy-600 { color: hsl(221, 83%, 53%); }
+  .navy-700 { color: hsl(224, 76%, 48%); }
+  .navy-800 { color: hsl(226, 71%, 40%); }
+  .navy-900 { color: hsl(224, 64%, 33%); }
+  
+  .bg-navy-50 { background-color: hsl(214, 100%, 97%); }
+  .bg-navy-100 { background-color: hsl(214, 95%, 93%); }
+  .bg-navy-200 { background-color: hsl(213, 97%, 87%); }
+  .bg-navy-300 { background-color: hsl(212, 96%, 78%); }
+  .bg-navy-400 { background-color: hsl(213, 94%, 68%); }
+  .bg-navy-500 { background-color: hsl(217, 91%, 60%); }
+  .bg-navy-600 { background-color: hsl(221, 83%, 53%); }
+  .bg-navy-700 { background-color: hsl(224, 76%, 48%); }
+  .bg-navy-800 { background-color: hsl(226, 71%, 40%); }
+  .bg-navy-900 { background-color: hsl(224, 64%, 33%); }
+  
+  .gold-50 { color: hsl(48, 100%, 96%); }
+  .gold-100 { color: hsl(48, 96%, 89%); }
+  .gold-200 { color: hsl(48, 97%, 77%); }
+  .gold-300 { color: hsl(46, 97%, 65%); }
+  .gold-400 { color: hsl(43, 96%, 56%); }
+  .gold-500 { color: hsl(38, 92%, 50%); }
+  .gold-600 { color: hsl(32, 95%, 44%); }
+  .gold-700 { color: hsl(26, 90%, 37%); }
+  .gold-800 { color: hsl(23, 83%, 31%); }
+  .gold-900 { color: hsl(22, 78%, 26%); }
+  
+  .bg-gold-50 { background-color: hsl(48, 100%, 96%); }
+  .bg-gold-100 { background-color: hsl(48, 96%, 89%); }
+  .bg-gold-200 { background-color: hsl(48, 97%, 77%); }
+  .bg-gold-300 { background-color: hsl(46, 97%, 65%); }
+  .bg-gold-400 { background-color: hsl(43, 96%, 56%); }
+  .bg-gold-500 { background-color: hsl(38, 92%, 50%); }
+  .bg-gold-600 { background-color: hsl(32, 95%, 44%); }
+  .bg-gold-700 { background-color: hsl(26, 90%, 37%); }
+  .bg-gold-800 { background-color: hsl(23, 83%, 31%); }
+  .bg-gold-900 { background-color: hsl(22, 78%, 26%); }
+  
+  .text-navy-50 { color: hsl(214, 100%, 97%); }
+  .text-navy-100 { color: hsl(214, 95%, 93%); }
+  .text-navy-200 { color: hsl(213, 97%, 87%); }
+  .text-navy-300 { color: hsl(212, 96%, 78%); }
+  .text-navy-400 { color: hsl(213, 94%, 68%); }
+  .text-navy-500 { color: hsl(217, 91%, 60%); }
+  .text-navy-600 { color: hsl(221, 83%, 53%); }
+  .text-navy-700 { color: hsl(224, 76%, 48%); }
+  .text-navy-800 { color: hsl(226, 71%, 40%); }
+  .text-navy-900 { color: hsl(224, 64%, 33%); }
+  
+  .text-gold-50 { color: hsl(48, 100%, 96%); }
+  .text-gold-100 { color: hsl(48, 96%, 89%); }
+  .text-gold-200 { color: hsl(48, 97%, 77%); }
+  .text-gold-300 { color: hsl(46, 97%, 65%); }
+  .text-gold-400 { color: hsl(43, 96%, 56%); }
+  .text-gold-500 { color: hsl(38, 92%, 50%); }
+  .text-gold-600 { color: hsl(32, 95%, 44%); }
+  .text-gold-700 { color: hsl(26, 90%, 37%); }
+  .text-gold-800 { color: hsl(23, 83%, 31%); }
+  .text-gold-900 { color: hsl(22, 78%, 26%); }
+  
+  .border-navy-50 { border-color: hsl(214, 100%, 97%); }
+  .border-navy-100 { border-color: hsl(214, 95%, 93%); }
+  .border-navy-200 { border-color: hsl(213, 97%, 87%); }
+  .border-navy-300 { border-color: hsl(212, 96%, 78%); }
+  .border-navy-400 { border-color: hsl(213, 94%, 68%); }
+  .border-navy-500 { border-color: hsl(217, 91%, 60%); }
+  .border-navy-600 { border-color: hsl(221, 83%, 53%); }
+  .border-navy-700 { border-color: hsl(224, 76%, 48%); }
+  .border-navy-800 { border-color: hsl(226, 71%, 40%); }
+  .border-navy-900 { border-color: hsl(224, 64%, 33%); }
+}
