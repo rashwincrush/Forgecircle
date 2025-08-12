@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Create HTTP server
+import http from 'http';
+const server = http.createServer(app);
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -37,7 +41,7 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = await registerRoutes(app);
+  await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -57,15 +61,11 @@ app.use((req, res, next) => {
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
+  // Other ports are firewalled. Default to 4000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  const port = parseInt(process.env.PORT || '4000', 10);
+  server.listen(port, '127.0.0.1', () => {
+    log(`Server is running on http://127.0.0.1:${port}`);
   });
 })();

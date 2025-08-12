@@ -1,0 +1,17 @@
+{
+  "name": "forgealumni-docs",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start --port 3001",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
