@@ -97,76 +97,9 @@ export default function Product() {
       {/* Add page transition class when mounted */}
       <div className={`transition-opacity duration-500 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       
-      {/* Side navigation for larger screens */}
-      <div className="hidden lg:block fixed left-0 top-1/2 -translate-y-1/2 z-40 ml-4">
-        <div className="bg-dark/60 backdrop-blur-xl rounded-xl p-2 shadow-glow-lg">
-          <nav>
-            <ul className="flex flex-col space-y-1">
-              {NAV_ITEMS.map((item) => {
-                const isActive = active === item.href;
-                return (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className={`block py-2 px-3 rounded-lg text-sm transition-all ${isActive ? 'side-nav-active' : 'side-nav-item'}`}
-                      aria-current={isActive ? 'true' : undefined}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-      </div>
+      {/* Sidebar navigation removed as requested */}
 
-      {/* Mobile floating nav button */}
-      <div className="lg:hidden fixed bottom-4 left-4 z-50">
-        <button 
-          onClick={() => setSideNavOpen(!sideNavOpen)}
-          className="bg-accent rounded-full p-3 shadow-glow text-dark">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      
-      {/* Mobile slide-out navigation */}
-      <div className={`lg:hidden fixed inset-y-0 left-0 w-64 bg-dark/95 backdrop-blur-xl z-50 shadow-2xl transform transition-transform duration-300 ease-in-out ${sideNavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="p-5 flex flex-col h-full">
-          <div className="flex justify-between items-center mb-8">
-            <h3 className="text-xl font-bold text-white">Navigation</h3>
-            <button onClick={() => setSideNavOpen(false)} className="text-white/70 hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-          <nav className="flex-1">
-            <ul className="space-y-2">
-              {NAV_ITEMS.map((item) => {
-                const isActive = active === item.href;
-                return (
-                  <li key={item.href}>
-                    <a
-                      href={item.href}
-                      onClick={() => setSideNavOpen(false)}
-                      className={`block py-3 px-4 rounded-lg ${isActive ? 'side-nav-active' : 'side-nav-item'}`}
-                      aria-current={isActive ? 'true' : undefined}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-      </div>
+      {/* Mobile navigation removed as requested */}
 
       <main className="relative">
         {/* Hero with immersive aurora background */}
@@ -212,25 +145,21 @@ export default function Product() {
                 <div className="absolute w-64 h-64 rounded-full bg-accent/30 filter blur-[80px] -bottom-10 -right-10"></div>
                 <div className="relative card-3d">
                   <div className="bg-dark/40 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-glow-lg p-1">
-                    <Image 
-                      src="/images/product-dashboard.png" 
-                      alt="ForgeCircle dashboard" 
-                      width={600} 
-                      height={400} 
-                      className="rounded-xl"
-                    />
+                    <div className="relative w-full h-[400px]">
+                      <Image 
+                        src="/images/dashboard.png" 
+                        alt="ForgeCircle dashboard" 
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        className="rounded-xl"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Scroll indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-              <span className="text-white/60 text-sm mb-2">Scroll to explore</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
+            {/* Scroll indicator removed as requested */}
           </div>
         </section>
 
